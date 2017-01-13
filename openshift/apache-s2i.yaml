@@ -19,7 +19,7 @@ items:
       type: Git
     strategy:
       type: Docker
-      dockerStrategy:
+      - dockerStrategy:
       from:
         kind: DockerImage
         name: 'openshift/base-centos7:latest'
