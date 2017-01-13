@@ -17,14 +17,22 @@ items:
       dockerStrategy:
         from:
           kind: DockerImage
-          name: openshift/base-centos7:latest
+          name: tmp/base-centos7:latest
       type: Docker
     triggers:
     - type: ConfigChange
-  status:
-    lastVersion: 0
+
 - apiVersion: v1
   kind: ImageStream
+  metadata:
     name: apache-s2i
+  spec:
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: 172.30.0.14:5000/tmp/apache-s2i:latest
+      generation: null
+      importPolicy: {}
+      name: latest
 kind: List
-metadata: {}
