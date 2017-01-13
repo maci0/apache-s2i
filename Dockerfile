@@ -2,6 +2,11 @@ FROM openshift/base-centos7
 MAINTAINER Marcel Wysocki <mwysocki@redhat.com>
 EXPOSE 8080
 
+LABEL io.k8s.description="Apache S2I Image to deploy websites" \
+      io.k8s.display-name="Apache" \
+      io.openshift.expose-services="8080:http" \
+      io.openshift.tags="builder,apache,httpd"
+
 USER root
 RUN yum -y install httpd && yum clean all
 RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
