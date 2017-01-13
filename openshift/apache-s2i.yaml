@@ -18,11 +18,11 @@ items:
         uri: https://github.com/maci0/apache-s2i.git
       type: Git
     strategy:
-      type: Docker
       dockerStrategy:
         from:
           kind: DockerImage
-          name: 'openshift/base-centos7:latest'
+          name: openshift/base-centos7:latest
+      type: Docker
     triggers:
     - type: ConfigChange
 
