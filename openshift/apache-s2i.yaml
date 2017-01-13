@@ -3,7 +3,6 @@ items:
 - apiVersion: v1
   kind: ImageStream
     name: apache-s2i
-
 - apiVersion: v1
   kind: BuildConfig
     name: apache-s2i
